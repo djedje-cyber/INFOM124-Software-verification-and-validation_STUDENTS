@@ -1,0 +1,1 @@
+mvn clean verify sonar:sonar   -Dsonar.projectKey=kata   -Dsonar.projectName='kata'   -Dsonar.host.url=http://0.0.0.0:9000   -Dsonar.token=sqp_aa737308b23d64c479edd503107c4f976da34e5c
