@@ -1,4 +1,4 @@
-
+import java.util.HashMap;
 public class TennisGame2 implements TennisGame
 {
     public int P1point = 0;
@@ -9,12 +9,19 @@ public class TennisGame2 implements TennisGame
     private String player1Name;
     private String player2Name;
 
-    private String[] EqualScores = {"Love","Fifteen","Thirty","-All"};
 
+    public HashMap<Integer,String> Pointres = new HashMap<Integer,String>();
 
     public TennisGame2(String player1Name, String player2Name) {
         this.player1Name = player1Name;
         this.player2Name = player2Name;
+
+        Pointres.put(0,"Love");
+        Pointres.put(1,"Fifteen");
+        Pointres.put(2,"Thirty");
+        Pointres.put(3,"Forty");
+
+
     }
 
     public String getScore(){
@@ -108,7 +115,7 @@ public class TennisGame2 implements TennisGame
 
 
     public void wonPoint(String player) {
-        if (player == "player1")
+        if (player.equals("player1"))
             P1point++;
         else
             P2point++;
