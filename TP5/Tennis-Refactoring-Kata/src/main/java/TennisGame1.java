@@ -1,4 +1,4 @@
-import Tennis.Game4.TennisGame;
+import tennis.game4.TennisGame;
 
 public class TennisGame1 implements TennisGame {
     

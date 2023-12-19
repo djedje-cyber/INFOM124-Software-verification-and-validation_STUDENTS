@@ -1,4 +1,4 @@
-import Tennis.Game4.TennisGame;
+import tennis.game4.TennisGame;
 
 import java.util.HashMap;
 import java.util.Map;

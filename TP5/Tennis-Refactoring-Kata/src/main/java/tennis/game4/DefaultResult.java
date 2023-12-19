@@ -1,8 +1,6 @@
-package Tennis.Game4;
+package tennis.game4;
 
-import Tennis.Game4.ResultProvider;
-
- public class DefaultResult implements ResultProvider {
+public class DefaultResult implements ResultProvider {
 
     private static final String[] scores = {"Love", "Fifteen", "Thirty", "Forty"};
 

@@ -1,5 +1,5 @@
-import Tennis.Game4.ResultProvider;
-import Tennis.Game4.TennisGame;
+import tennis.game4.ResultProvider;
+import tennis.game4.TennisGame;
 import org.junit.jupiter.params.ParameterizedTest;
 
 import java.util.stream.Stream;

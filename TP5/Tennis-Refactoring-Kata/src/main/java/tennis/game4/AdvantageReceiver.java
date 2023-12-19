@@ -1,6 +1,4 @@
-package Tennis.Game4;
-
-import Tennis.Game4.ResultProvider;
+package tennis.game4;
 
 public class AdvantageReceiver implements ResultProvider {
 

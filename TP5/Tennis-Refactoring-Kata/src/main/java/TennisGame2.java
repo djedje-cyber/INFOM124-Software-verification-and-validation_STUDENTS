@@ -1,4 +1,4 @@
-import Tennis.Game4.TennisGame;
+import tennis.game4.TennisGame;
 
 import java.util.HashMap;
 public class TennisGame2 implements TennisGame
@@ -12,17 +12,16 @@ public class TennisGame2 implements TennisGame
     private String player2Name;
 
     private static final String FIFTEEN = "Fifteen";
+    private static final String LOVE = "Love";
 
-    public HashMap<Integer,String> Pointres = new HashMap<Integer,String>();
+    private static final String THIRTY = "Thirty";
 
+    private static final String FORTY="Forty";
     public TennisGame2(String player1Name, String player2Name) {
         this.player1Name = player1Name;
         this.player2Name = player2Name;
 
-        Pointres.put(0,"Love");
-        Pointres.put(1,FIFTEEN);
-        Pointres.put(2,"Thirty");
-        Pointres.put(3,"Forty");
+
 
 
     }
@@ -32,11 +31,11 @@ public class TennisGame2 implements TennisGame
         if (P1point == P2point && P1point < 4)
         {
             if (P1point==0)
-                score = "Love";
+                score = LOVE ;
             if (P1point==1)
                 score = FIFTEEN;
             if (P1point==2)
-                score = "Thirty";
+                score = THIRTY;
             score += "-All";
         }
         if (P1point==P2point && P1point>=3)
@@ -47,11 +46,11 @@ public class TennisGame2 implements TennisGame
             if (P1point==1)
                 P1res = FIFTEEN;
             if (P1point==2)
-                P1res = "Thirty";
+                P1res = THIRTY;
             if (P1point==3)
-                P1res = "Forty";
+                P1res = FORTY;
 
-            P2res = "Love";
+            P2res = LOVE;
             score = P1res + "-" + P2res;
         }
         if (P2point > 0 && P1point==0)
@@ -59,36 +58,36 @@ public class TennisGame2 implements TennisGame
             if (P2point==1)
                 P2res = FIFTEEN;
             if (P2point==2)
-                P2res = "Thirty";
+                P2res = THIRTY;
             if (P2point==3)
-                P2res = "Forty";
+                P2res = FORTY;
 
-            P1res = "Love";
+            P1res = LOVE;
             score = P1res + "-" + P2res;
         }
 
         if (P1point>P2point && P1point < 4)
         {
             if (P1point==2)
-                P1res="Thirty";
+                P1res=THIRTY;
             if (P1point==3)
-                P1res="Forty";
+                P1res=FORTY;
             if (P2point==1)
                 P2res=FIFTEEN;
             if (P2point==2)
-                P2res="Thirty";
+                P2res=THIRTY;
             score = P1res + "-" + P2res;
         }
         if (P2point>P1point && P2point < 4)
         {
             if (P2point==2)
-                P2res="Thirty";
+                P2res=THIRTY;
             if (P2point==3)
-                P2res="Forty";
+                P2res=FORTY;
             if (P1point==1)
                 P1res=FIFTEEN;
             if (P1point==2)
-                P1res="Thirty";
+                P1res=THIRTY;
             score = P1res + "-" + P2res;
         }
 

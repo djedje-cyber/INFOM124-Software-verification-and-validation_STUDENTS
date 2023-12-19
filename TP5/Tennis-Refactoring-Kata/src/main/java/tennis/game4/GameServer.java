@@ -1,7 +1,4 @@
-package Tennis.Game4;
-
-import Tennis.Game4.ResultProvider;
-import Tennis.Game4.TennisResult;
+package tennis.game4;
 
 class GameServer implements ResultProvider {
     private final TennisGame4 game;

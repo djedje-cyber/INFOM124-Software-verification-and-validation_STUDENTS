@@ -1,4 +1,4 @@
-package Tennis.Game4;
+package tennis.game4;
 
 public interface ResultProvider {
     TennisResult getResult();
