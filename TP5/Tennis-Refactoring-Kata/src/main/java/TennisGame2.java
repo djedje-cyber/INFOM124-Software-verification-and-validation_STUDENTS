@@ -25,91 +25,51 @@ public class TennisGame2 implements TennisGame
 
     }
 
-    public String getScore(){
-        String score = "";
-        if (P1point == P2point && P1point < 4)
-        {
-            if (P1point==0)
-                score = LOVE ;
-            if (P1point==1)
-                score = FIFTEEN;
-            if (P1point==2)
-                score = THIRTY;
-            score += "-All";
+    public String getScore() {
+        if (P1point == P2point) {
+            return getEqualScore();
+        } else if (P1point >= 4 || P2point >= 4) {
+            return getEndGameScore();
+        } else {
+            return getRegularScore();
         }
-        if (P1point==P2point && P1point>=3)
-            score = "Tennis.Game4.ResultProvider.Deuce";
-
-        if (P1point > 0 && P2point==0)
-        {
-            if (P1point==1)
-                P1res = FIFTEEN;
-            if (P1point==2)
-                P1res = THIRTY;
-            if (P1point==3)
-                P1res = FORTY;
-
-            P2res = LOVE;
-            score = P1res + "-" + P2res;
-        }
-        if (P2point > 0 && P1point==0)
-        {
-            if (P2point==1)
-                P2res = FIFTEEN;
-            if (P2point==2)
-                P2res = THIRTY;
-            if (P2point==3)
-                P2res = FORTY;
-
-            P1res = LOVE;
-            score = P1res + "-" + P2res;
-        }
-
-        if (P1point>P2point && P1point < 4)
-        {
-            if (P1point==2)
-                P1res=THIRTY;
-            if (P1point==3)
-                P1res=FORTY;
-            if (P2point==1)
-                P2res=FIFTEEN;
-            if (P2point==2)
-                P2res=THIRTY;
-            score = P1res + "-" + P2res;
-        }
-        if (P2point>P1point && P2point < 4)
-        {
-            if (P2point==2)
-                P2res=THIRTY;
-            if (P2point==3)
-                P2res=FORTY;
-            if (P1point==1)
-                P1res=FIFTEEN;
-            if (P1point==2)
-                P1res=THIRTY;
-            score = P1res + "-" + P2res;
-        }
-
-        if (P1point > P2point && P2point >= 3)
-        {
-            score = "Advantage player1";
-        }
-
-        if (P2point > P1point && P1point >= 3)
-        {
-            score = "Advantage player2";
-        }
-
-        if (P1point>=4 && P2point>=0 && (P1point-P2point)>=2)
-        {
-            score = "Win for player1";
-        }
-        if (P2point>=4 && P1point>=0 && (P2point-P1point)>=2)
-        {
-            score = "Win for player2";
-        }
-        return score;
     }
+
+    private String getEqualScore() {
+        if (P1point < 3) {
+            return (P1point == 0) ? LOVE + "-All" : getPointScore(P1point) + "-All";
+        } else {
+            return "Tennis.Game4.ResultProvider.Deuce";
+        }
+    }
+
+    private String getRegularScore() {
+        String P1res = getPointScore(P1point);
+        String P2res = getPointScore(P2point);
+        return P1res + "-" + P2res;
+    }
+
+    private String getEndGameScore() {
+        if (Math.abs(P1point - P2point) >= 2) {
+            return (P1point > P2point) ? "Win for player1" : "Win for player2";
+        } else {
+            return (P1point > P2point) ? "Advantage player1" : "Advantage player2";
+        }
+    }
+
+    private String getPointScore(int point) {
+        switch (point) {
+            case 1:
+                return FIFTEEN;
+            case 2:
+                return THIRTY;
+            case 3:
+                return FORTY;
+            default:
+                return LOVE;
+        }
+    }
+
 
 
 
