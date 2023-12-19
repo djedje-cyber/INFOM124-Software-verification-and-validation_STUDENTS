@@ -5,10 +5,16 @@ import java.util.Map;
 
 public class TennisGame5 implements TennisGame {
 
-    private final String player1Name;
-    private final String player2Name;
     private int player1Score;
     private int player2Score;
+
+    private String player1Name;
+    private String player2Name;
+
+
+    private static final String WINPLAYER2 = "Win for player2";
+    private static final String WINPLAYER1 = "Win for player1";
+
 
     public TennisGame5(String player1Name, String player2Name) {
         this.player1Name = player1Name;
@@ -35,30 +41,30 @@ public class TennisGame5 implements TennisGame {
             p2--;
         }
 
-        var lookup = new HashMap<Map.Entry, String>();
+        HashMap<Map.Entry, String> lookup = new HashMap<>();
         lookup.put(Map.entry(0, 0), "Love-All");
         lookup.put(Map.entry(0, 1), "Love-Fifteen");
         lookup.put(Map.entry(0, 2), "Love-Thirty");
         lookup.put(Map.entry(0, 3), "Love-Forty");
-        lookup.put(Map.entry(0, 4), "Win for player2");
+        lookup.put(Map.entry(0, 4), WINPLAYER2);
         lookup.put(Map.entry(1, 0), "Fifteen-Love");
         lookup.put(Map.entry(1, 1), "Fifteen-All");
         lookup.put(Map.entry(1, 2), "Fifteen-Thirty");
         lookup.put(Map.entry(1, 3), "Fifteen-Forty");
-        lookup.put(Map.entry(1, 4), "Win for player2");
+        lookup.put(Map.entry(1, 4),WINPLAYER2);
         lookup.put(Map.entry(2, 0), "Thirty-Love");
         lookup.put(Map.entry(2, 1), "Thirty-Fifteen");
         lookup.put(Map.entry(2, 2), "Thirty-All");
         lookup.put(Map.entry(2, 3), "Thirty-Forty");
-        lookup.put(Map.entry(2, 4), "Win for player2");
+        lookup.put(Map.entry(2, 4), WINPLAYER2);
         lookup.put(Map.entry(3, 0), "Forty-Love");
         lookup.put(Map.entry(3, 1), "Forty-Fifteen");
         lookup.put(Map.entry(3, 2), "Forty-Thirty");
         lookup.put(Map.entry(3, 3), "Tennis.Game4.ResultProvider.Deuce");
         lookup.put(Map.entry(3, 4), "Advantage player2");
-        lookup.put(Map.entry(4, 0), "Win for player1");
-        lookup.put(Map.entry(4, 1), "Win for player1");
-        lookup.put(Map.entry(4, 2), "Win for player1");
+        lookup.put(Map.entry(4, 0), WINPLAYER1);
+        lookup.put(Map.entry(4, 1), WINPLAYER1);
+        lookup.put(Map.entry(4, 2), WINPLAYER1);
         lookup.put(Map.entry(4, 3), "Advantage player1");
         lookup.put(Map.entry(4, 4), "Tennis.Game4.ResultProvider.Deuce");
 
@@ -69,4 +75,15 @@ public class TennisGame5 implements TennisGame {
             throw new IllegalArgumentException("Invalid score.");
         }
     }
+
+    public String getPlayer1Name(){
+        return this.player1Name;
+    }
+
+    public String getPlayer2Name(){
+        return this.player2Name;
+    }
+
+
+
 }
