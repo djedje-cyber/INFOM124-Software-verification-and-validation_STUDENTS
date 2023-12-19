@@ -1,4 +1,8 @@
-class AdvantageServer implements ResultProvider {
+package Tennis.Game4;
+
+import Tennis.Game4.ResultProvider;
+
+public class AdvantageServer implements ResultProvider {
     private final TennisGame4 game;
     private final ResultProvider nextResult;
 

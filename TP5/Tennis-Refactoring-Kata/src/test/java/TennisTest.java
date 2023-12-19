@@ -1,3 +1,5 @@
+import Tennis.Game4.ResultProvider;
+import Tennis.Game4.TennisGame;
 import org.junit.jupiter.params.ParameterizedTest;
 
 import java.util.stream.Stream;
@@ -12,8 +14,8 @@ public class TennisTest {
                 {0, 0, "Love-All"},
                 {1, 1, "Fifteen-All"},
                 {2, 2, "Thirty-All"},
-                {3, 3, "Deuce"},
-                {4, 4, "Deuce"},
+                {3, 3, "Tennis.Game4.ResultProvider.Deuce"},
+                {4, 4, "Tennis.Game4.ResultProvider.Deuce"},
 
                 {1, 0, "Fifteen-Love"},
                 {0, 1, "Love-Fifteen"},
@@ -87,7 +89,7 @@ public class TennisTest {
     @ParameterizedTest
     @MethodSource("getAllScores")
     public void checkAllScoresTennisGame4(int player1Points, int player2Points, String expectedScore) {
-        TennisGame game = new TennisGame4("player1", "player2");
+        TennisGame game = new ResultProvider.TennisGame4("player1", "player2");
         checkAllScores(player1Points, player2Points, expectedScore, game);
     }
 

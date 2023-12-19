@@ -1,3 +1,5 @@
+import Tennis.Game4.TennisGame;
+
 public class TennisGame6 implements TennisGame {
     private final String player1Name;
     private final String player2Name;
@@ -38,7 +40,7 @@ public class TennisGame6 implements TennisGame {
                     tieScore = "Thirty-All";
                     break;
                 default:
-                    tieScore = "Deuce";
+                    tieScore = "Tennis.Game4.ResultProvider.Deuce";
                     break;
             }
 

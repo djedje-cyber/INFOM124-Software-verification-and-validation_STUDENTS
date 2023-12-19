@@ -1,3 +1,5 @@
+package Tennis.Game4;
+
 public class TennisResult {
 
     String serverScore;
@@ -8,7 +10,7 @@ public class TennisResult {
         this.receiverScore = receiverScore;
     }
 
-    String format() {
+    public String format() {
         if ("".equals(this.receiverScore))
             return this.serverScore;
         if (serverScore.equals(receiverScore))

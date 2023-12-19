@@ -1,3 +1,4 @@
+import Tennis.Game4.TennisGame;
 
 public class TennisGame3 implements TennisGame {
 
@@ -22,7 +23,7 @@ public class TennisGame3 implements TennisGame {
             return (Player1 == Player2) ? this.score + "-All" : this.score + "-" + point[Player2];
         } else {
             if (Player1 == Player2)
-                return "Deuce";
+                return "Tennis.Game4.ResultProvider.Deuce";
             this.score = Player1 > Player2 ? PlayerName1 : PlayerName2;
             return ((Player1 -Player2)*(Player1 -Player2) == 1) ? "Advantage " + this.score : "Win for " + this.score;
         }
