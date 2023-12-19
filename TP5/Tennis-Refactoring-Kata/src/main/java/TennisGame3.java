@@ -2,39 +2,40 @@ import tennis.game4.TennisGame;
 
 public class TennisGame3 implements TennisGame {
 
-    private int Player2;
-    private  int Player1;
-    private  String PlayerName1;
-    private String PlayerName2;
+    private int player2;
+    private  int player1;
+    private  String playerName1;
+    private String playerName2;
 
 
-    private String score;
 
-    public TennisGame3(String PlayerName1, String PlayerName2) {
-        this.PlayerName1 = PlayerName1;
-        this.PlayerName2 = PlayerName2;
+    public TennisGame3(String playerName1, String playerName2) {
+        this.playerName1 = playerName1;
+        this.playerName2 = playerName2;
     }
 
     public String getScore() {
 
-        if (Player1 < 4 && Player2 < 4 && !(Player1 + Player2 == 6)) {
+        String score;
+
+        if (player1 < 4 && player2 < 4 && (player1 + player2 != 6)) {
             String[] point = new String[]{"Love", "Fifteen", "Thirty", "Forty"};
-            this.score = point[Player1];
-            return (Player1 == Player2) ? this.score + "-All" : this.score + "-" + point[Player2];
+            score = point[player1];
+            return (player1 == player2) ? score + "-All" : score + "-" + point[player2];
         } else {
-            if (Player1 == Player2)
+            if (player1 == player2)
                 return "Tennis.Game4.ResultProvider.Deuce";
-            this.score = Player1 > Player2 ? PlayerName1 : PlayerName2;
-            return ((Player1 -Player2)*(Player1 -Player2) == 1) ? "Advantage " + this.score : "Win for " + this.score;
+            score = player1 > player2 ? playerName1 : playerName2;
+            return ((player1 - player2)*(player1 - player2) == 1) ? "Advantage " + score : "Win for " + score;
         }
     }
 
     public void wonPoint(String playerName) {
         if (playerName.equals("player1")) {
-            this.Player1 += 1;
+            this.player1 += 1;
         }
         else{
-            this.Player2 += 1;
+            this.player2 += 1;
         }
     }
 

@@ -1,6 +1,5 @@
 import tennis.game4.TennisGame;
 
-import java.util.HashMap;
 public class TennisGame2 implements TennisGame
 {
     public int P1point = 0;
