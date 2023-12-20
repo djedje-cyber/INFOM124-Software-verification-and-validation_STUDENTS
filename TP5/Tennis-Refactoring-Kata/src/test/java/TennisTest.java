@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Test;
 import tennis.game4.ResultProvider;
 import tennis.game4.TennisGame;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -85,6 +86,24 @@ public class TennisTest {
         TennisGame game = new TennisGame3("player1", "player2");
         checkAllScores(player1Points, player2Points, expectedScore, game);
     }
+
+
+
+    @Test
+    void TestGetNameTennis3(){
+        TennisGame3 game = new TennisGame3("player1","player2");
+
+        assertEquals("player1",game.getNamePlayer1());
+    }
+
+
+    @Test
+    void TestGetName2Tennis3(){
+        TennisGame3 game = new TennisGame3("player1","player2");
+        assertEquals("player2",game.getPlayerName2());
+    }
+
+
 
     @ParameterizedTest
     @MethodSource("getAllScores")

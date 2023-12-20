@@ -39,4 +39,16 @@ public class TennisGame3 implements TennisGame {
         }
     }
 
+
+    public String getNamePlayer1(){
+        return this.playerName1;
+    }
+
+    public String getPlayerName2(){
+        return this.playerName2;
+    }
+
+
+
+
 }

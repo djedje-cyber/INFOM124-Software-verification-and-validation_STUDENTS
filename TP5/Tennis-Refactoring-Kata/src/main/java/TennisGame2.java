@@ -3,10 +3,7 @@ import tennis.game4.TennisGame;
 public class TennisGame2 implements TennisGame
 {
     public int P1point = 0;
-    public int P2point = 0;
-
-    public String P1res = "";
-    public String P2res = "";
+    public int P2point = 0; 
     private String player1Name;
     private String player2Name;
 
@@ -44,9 +41,9 @@ public class TennisGame2 implements TennisGame
     }
 
     private String getRegularScore() {
-        String P1res = getPointScore(P1point);
-        String P2res = getPointScore(P2point);
-        return P1res + "-" + P2res;
+        String player1Res = getPointScore(P1point);
+        String player2Res = getPointScore(P2point);
+        return player1Res + "-" + player2Res;
     }
 
     private String getEndGameScore() {
