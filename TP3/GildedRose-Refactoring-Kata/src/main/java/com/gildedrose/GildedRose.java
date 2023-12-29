@@ -1,7 +1,7 @@
 package com.gildedrose;
 
 class GildedRose {
-    private Item[] items;
+    private final Item[] items;
 
     private static final String BACKSTAGE ="Backstage passes to a TAFKAL80ETC concert";
     private static final String SULFURAS = "Sulfuras, Hand of Ragnaros";

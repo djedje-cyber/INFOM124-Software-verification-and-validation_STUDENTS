@@ -146,8 +146,50 @@ class GildedRoseTest {
     }
 
 
-    
+    @Test
+    void makeTheCallTwoTimesSelin0(){
+        Item[] items = new Item[]{new Item("essai",0,40)};
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        app.updateQuality();
+        assertEquals(36,app.getItem(0).quality);
+    }
 
+
+    @Test
+    void ConcertPlaceMustBe0(){
+        Item[] items = new Item[]{new Item("Aged Brie",0,40)};
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(0,app.getItem(0).quality);
+    }
+
+    @Test
+    void ConcertPlaceMustBe0Backstage(){
+        Item[] items = new Item[]{new Item("Backstage passes to a TAFKAL80ETC concert",0,40)};
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(0,app.getItem(0).quality);
+    }
+
+
+    @Test
+    void testSellInLessThan0(){
+        Item[] items = new Item[]{new Item("essai",-1,40)};
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(38,app.getItem(0).quality);
+    }
+
+
+    @Test
+    void testToString(){
+        Item[] items = new Item[]{new Item("essai",-1,40)};
+        GildedRose app = new GildedRose(items);
+        String result = app.getItem(0).toString();
+        String expected = "essai, -1, 40";
+        assertEquals(expected,result);
+    }
 
 
 
