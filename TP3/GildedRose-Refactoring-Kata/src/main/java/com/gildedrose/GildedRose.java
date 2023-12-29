@@ -15,7 +15,7 @@ class GildedRose {
 
 
     private void reduceQuality(int i){
-        if (!this.items[i].name.equals(AGEDBRIE) && !this.items[i].name.equals(BACKSTAGE) && this.items[i].quality > 0 && !this.items[i].name.equals(SULFURAS) && !this.items[i].name.equals(CONJURED) && this.items[i].sellIn>0) {
+        if (!this.items[i].name.equals(AGEDBRIE) && !this.items[i].name.equals(BACKSTAGE) && this.items[i].quality > 0 && !this.items[i].name.equals(SULFURAS) && !this.items[i].name.equals(CONJURED)) {
             this.items[i].quality = this.items[i].quality - 1;
         }
     }
@@ -62,6 +62,9 @@ class GildedRose {
     private void reduceQualityConjured(int i){
         if(items[i].name.equals(CONJURED)){
             items[i].quality-=2;
+        }
+        if(items[i].name.equals(CONJURED) && items[i].sellIn<=0){
+            items[i].quality-=1;
         }
 
 
